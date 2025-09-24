@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedido de Namoro</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+    }
+
+    body {
+        background: linear-gradient(135deg, #4a90e2, #50e3c2); /* gradiente mais suave */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+        gap: 30px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    header h1 {
+        color: #fffacd; 
+        font-size: 1.5rem;
+        max-width: 600px;
+        line-height: 1.6;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    button {
+        font-size: 1rem;
+        font-weight: bold;
+        padding: 10px 25px;
+        border-radius: 25px;
+        border: 2px solid #fff;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        user-select: none;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .sim {
+        background-color: #2cdb14;
+        color: #fff;
+    }
+
+    .sim:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .nao {
+        background-color: #ff4b4b;
+        color: #fff;
+        position: relative; 
+    }
+
+    .nao:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    a {
+        text-decoration: none;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Desde que te conheci, cada dia ficou mais leve e mais feliz.<br>
+    Eu gosto de você mais do que consigo explicar… <br>Quer namorar comigo?</h1>
+</header>
+
+<div>
+    <a href="https://www.youtube.com/watch?v=l4DAcyXkX0E&list=RDl4DAcyXkX0E&start_radio=1" target="_blank">
+        <button class="sim">SIMMM!</button>
+    </a>
+    <button class="nao">Não.</button>
+</div>
+
+<script>
+    const botaoNao = document.querySelector(".nao");
+
+    botaoNao.addEventListener("click", () => { 
+        botaoNao.style.position = "absolute";
+
+        const maxY = window.innerHeight - botaoNao.offsetHeight;
+        const maxX = window.innerWidth - botaoNao.offsetWidth;
+
+        const randomY = Math.random() * maxY;
+        const randomX = Math.random() * maxX;
+
+        botaoNao.style.left = randomX + "px";
+        botaoNao.style.top = randomY + "px";
+    });
+</script>
+
+</body>
+</html>
